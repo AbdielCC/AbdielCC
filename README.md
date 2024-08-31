@@ -1,5 +1,5 @@
 ### Hi there 👋
-![img](https://cdn.wallpapersafari.com/10/88/91a6Zu.jpg)
+![img](https://preview.redd.it/4k-anime-wallpapers-v0-qrqk3cv5tepc1.jpg?width=1080&crop=smart&auto=webp&s=6945bea8b0a4e1e3bf9ff9d1127378e5a0c430cd)
 <!--
 **AbdielCC/AbdielCC** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
