@@ -1,8 +1,8 @@
 # 皆さん、こんにちは。このリポジトリに来ていただいてうれしいです。
 ![img](https://preview.redd.it/4k-anime-wallpapers-v0-qrqk3cv5tepc1.jpg?width=1080&crop=smart&auto=webp&s=6945bea8b0a4e1e3bf9ff9d1127378e5a0c430cd)
 
-<audio controls>
-  <source src="https://github.com/AbdielCC/AbdielCC/blob/6c8a26163e10b6097a406f9a35bf6c9d13bb780a/Imagine-Dragons-Natural.mp3" type="audio/mpeg">
+<audio controls autoplay>
+  <source src="https://github.com/AbdielCC/AbdielCC/blob/af9a5bfdf8de1c78440a22c86422e9607b88f039/Imagine-Dragons-Natural.mp3?raw=true" type="audio/mpeg">
   Tu navegador no soporta la etiqueta de audio.
 </audio>
 
