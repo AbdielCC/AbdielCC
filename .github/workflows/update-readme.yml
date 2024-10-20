@@ -23,6 +23,10 @@ jobs:
         run: |
           echo "PATH=$(ruby -e 'puts Gem.user_dir')/bin:$PATH" >> $GITHUB_ENV
 
+      - name: Debug Linguist Output
+        run: |
+          github-linguist --breakdown || echo "Linguist command failed"
+      
       - name: Generate Language List
         run: |
           # Mantenemos el contenido original del README
@@ -33,9 +37,15 @@ jobs:
 
           # Generamos la lista de lenguajes detectados
           LANGUAGES=$(github-linguist | grep "Language" | awk '{print $2}')
-          for lang in $LANGUAGES; do
-            echo "- $lang" >> temp_readme.md
-          done
+          
+          # Si no se detectan lenguajes, añade un mensaje por defecto
+          if [ -z "$LANGUAGES" ]; then
+            echo "No se detectaron lenguajes." >> temp_readme.md
+          else
+            for lang in $LANGUAGES; do
+              echo "- $lang" >> temp_readme.md
+            done
+          fi
 
           # Reemplazamos el README original por el actualizado
           mv temp_readme.md README.md
