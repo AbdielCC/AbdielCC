@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * * 0' 
 
 jobs:
   update-readme:
@@ -21,8 +21,7 @@ jobs:
 
       - name: Add Ruby Gems to PATH
         run: |
-          echo "$(ruby -e 'puts Gem.user_dir')/bin" >> $GITHUB_ENV
-          export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+          echo "PATH=$(ruby -e 'puts Gem.user_dir')/bin:$PATH" >> $GITHUB_ENV
 
       - name: Generate Language List
         run: |
