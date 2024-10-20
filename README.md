@@ -24,3 +24,8 @@ Here are some ideas to get you started:
 ---
 
 ## Lenguajes Utilizados
+
+---
+
+## Lenguajes Utilizados
+No se detectaron lenguajes.
