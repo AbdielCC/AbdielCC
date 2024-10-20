@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0' 
+    - cron: '0 0 * * 0' # Actualización semanal
 
 jobs:
   update-readme:
@@ -25,11 +25,20 @@ jobs:
 
       - name: Generate Language List
         run: |
+          # Mantenemos el contenido original del README
+          cat README.md > temp_readme.md
+
+          # Añadimos una línea divisoria y la sección de lenguajes
+          echo -e "\n---\n\n## Lenguajes Utilizados" >> temp_readme.md
+
+          # Generamos la lista de lenguajes detectados
           LANGUAGES=$(github-linguist | grep "Language" | awk '{print $2}')
-          echo "## Lenguajes Utilizados" > README.md
           for lang in $LANGUAGES; do
-            echo "- $lang" >> README.md
+            echo "- $lang" >> temp_readme.md
           done
+
+          # Reemplazamos el README original por el actualizado
+          mv temp_readme.md README.md
 
       - name: Commit Changes
         env:
