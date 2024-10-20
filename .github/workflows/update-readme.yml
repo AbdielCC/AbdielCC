@@ -5,8 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0'
-
+    - cron: '0 0 * * 0' 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -21,7 +20,8 @@ jobs:
 
       - name: Add Ruby Gems to PATH
         run: |
-          echo "GEM_PATH=$(ruby -e 'puts Gem.user_dir')/bin" >> $GITHUB_ENV
+          echo "$(ruby -e 'puts Gem.user_dir')/bin" >> $GITHUB_ENV
+          export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
       - name: Generate Language List
         run: |
@@ -32,9 +32,11 @@ jobs:
           done
 
       - name: Commit Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           git add README.md
           git commit -m "Updated README with detected languages"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/AbdielCC/AbdielCC.git
