@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0' # Actualización semanal (puedes ajustar la frecuencia)
+    - cron: '0 0 * * 0' 
 
 jobs:
   update-readme:
@@ -17,7 +17,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install ruby-full
-          gem install github-linguist
+          gem install github-linguist --user-install
+
+      - name: Add Ruby Gems to PATH
+        run: echo "::add-path::$(ruby -e 'puts Gem.user_dir')/bin"
 
       - name: Generate Language List
         run: |
