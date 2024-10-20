@@ -13,15 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Linguist
+      - name: Install Ruby and GitHub Linguist
         run: |
           sudo apt-get update
-          sudo apt-get install ruby-full
+          sudo apt-get install -y ruby-full
           gem install github-linguist --user-install
 
       - name: Add Ruby Gems to PATH
         run: |
-          echo "PATH=$(ruby -e 'puts Gem.user_dir')/bin:$PATH" >> $GITHUB_ENV
+          echo "GEM_PATH=$(ruby -e 'puts Gem.user_dir')/bin" >> $GITHUB_ENV
+          echo "$(ruby -e 'puts Gem.user_dir')/bin" >> $GITHUB_ENV
 
       - name: Generate Language List
         run: |
