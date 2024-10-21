@@ -21,12 +21,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
----
-
-[![Top Langs](https://github.com/anuraghazra/github-readme-stats](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdielCC&layout=compact&theme=synthwave)](https://github.com/anuraghazra/github-readme-stats)
-
-
----
-
-## Lenguajes Utilizados
-No se detectaron lenguajes.
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdielCC&layout=compact&theme=synthwave)](https://github.com/anuraghazra/github-readme-stats)
